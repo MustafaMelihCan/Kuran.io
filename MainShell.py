@@ -7,12 +7,20 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
-driver.get("https://www.kuranmeali.com/AyetKarsilastirma.php?sure=2&ayet=3")
+#ayet = input('Please enter the name of the sure: ').lower()
 
+def pagesetter():
+    sureler = {'fatiha':'1'}
+    sure_isim = input('Please enter the name of sure: ').lower()
+    sure = sureler[sure_isim]
+    ayet = input('Please enter the ayet number: ')
+    driver.get(f"https://www.kuranmeali.com/AyetKarsilastirma.php?sure={sure}&ayet={ayet}")
+
+pagesetter()
 #time.sleep(5)
 #print(driver.title)
 Ahmet_Varol = driver.find_element(By.ID,'ahmetvarol')
-print(Ahmet_Varol)
+print(Ahmet_Varol.text)
 driver.close
 
 
