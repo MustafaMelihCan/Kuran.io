@@ -31,6 +31,6 @@ def cevirisecici(s):
 
 surelist = listofsureler()
 pagesetter(surelist)
-print(cevirisecici('ahmetvarol').text)
+print(cevirisecici('yusufali').text)
 driver.close
 
